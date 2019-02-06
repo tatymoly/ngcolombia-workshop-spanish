@@ -1,28 +1,28 @@
 # Brownie Points
 
-First of all, congratulations, we're really happy you finished the workshop, and we all hope you learned a lot :-)
+En primer lugar, felicitaciones, estamos muy contentos de que hayas terminado el taller y todos esperamos que hayas aprendido mucho :-)
 
-If you're up for it, there's one change we want you to do to the app, and it's about making it modular, more maintainable using Angular Components.
+Si está dispuest@ a hacerlo, hay un cambio que queremos que hagas a la aplicación, y se trata de hacerlo modular, más fácil de mantener utilizando componentes de Angular.
 
-A component is the basic building block in an Angular application. You can extract functionality into a component and then re-use it throughout your app.
+Un componente es un bloque básico en una aplicación Angular. Puedes extraer funcionalidad en un componente y luego reutilizarlo en toda su aplicación.
 
-For example, let's say you have a list of items inside your app, but then you realize you need that list somewhere else, would you copy/paste the list in the new place? Leaving you with two (_or more_) lists to maintain?
+Por ejemplo, supongamos que tienes una lista de elementos dentro de tu aplicación, pero luego te das cuenta de que necesitas esa lista en otro lugar, ¿copiarías / pegarías la lista en el nuevo lugar? ¿Dejándote con dos (o más) listas para mantener?
 
-What we should do there is create the list as a component, and then use that component everywhere we need the list, that way we're maintaining one list and using it everywhere we want to.
+Lo que deberíamos hacer allí es crear la lista como un componente, y luego usar ese componente en todos los lugares en que necesitamos la lista, de esa manera mantendremos una sola lista y la usaremos en cualquier lugar que queramos.
 
-To create a component you'll use the **Angular Generator** inside Stackblitz, the same way you created the interface, but clicking on **Component** instead
+Para crear un componente, usarás el **Angular Generator** dentro de Stackblitz, de la misma forma que creaste la interfaz, pero haciendo clic en **Component**.
 
 ![Angular Generator](img/create-interface.png)
 
-Once the component is created you get a new folder with several files, an HTML, a CSS, and a TS file, to handle the view, the styles, and the logic of that component.
+Una vez que se crea el componente, obtienes una nueva carpeta con varios archivos, un HTML, un CSS y un archivo TS, para manejar la vista, los estilos y la lógica de ese componente.
 
-You'll move the functionality's logic to that component, and then you can use it anywhere inside your app, to use it you'll want to find the component's selector.
+Moverás la lógica de la funcionalidad a ese componente, y luego podrás usarla en cualquier lugar dentro de tu aplicación, para usarla querrás encontrar el selector de componentes.
 
-Inside the components TypeScript file look for the `@Component()` decorator, the selector is there:
+Dentro de los componentes, busca en el archivo TypeScript el decorador `@Component()`, el selector está allí:
 
 ![Component Decorator](img/component-decorator.png)
 
-All you need to do is to call the selector inside your app:
+Todo lo que necesitas hacer es llamar al selector dentro de tu aplicación:
 
 ```html
 <header>
@@ -37,6 +37,6 @@ All you need to do is to call the selector inside your app:
 <tv-show-card></tv-show-card>
 ```
 
-Now try it yourself, go ahead and transform our card into a component and then render it on the screen.
+Ahora intentalo tu mism@, sige adelante y transforma nuestra tarjeta en un componente y luego procésala en la pantalla.
 
-Remember, don't be shy or affraid to ask questions, the mentors are here for you!
+Recuerda, no seas tímid@ ni tengas miedo de hacer preguntas, ¡los mentores están aquí para ayudarte!

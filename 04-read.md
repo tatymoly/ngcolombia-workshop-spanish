@@ -1,8 +1,8 @@
-# Reading your data
+# Leyendo tu data
 
-In the previous lesson, we learned how to store data in Firestore. Now, it's time to learn how to read that data and display it inside our application.
+En la lección anterior, aprendimos a almacenar datos en Firestore. Ahora es el momento de aprender a leer esos datos y mostrarlos dentro de nuestra aplicación.
 
-Remember in the last lesson when we did this:
+Recuerda en la última lección cuando hicimos esto:
 
 ```js
 constructor(private db: AngularFirestore) {
@@ -11,35 +11,11 @@ constructor(private db: AngularFirestore) {
 }
 ```
 
-That bit of code right there is enough to create a reference to our TV Shows, and then transform that into an `Observable` we can display on our page.
+Ese trozo de código allí es suficiente para crear una referencia a nuestros programas de televisión y luego transformarlo en un "Observable" que podemos mostrar en nuestra página.
 
-All you need to do now is to add the markup (_The HTML_) and the app will show the cards you start creating.
+Todo lo que necesitas hacer ahora es agregar el marcado (_El HTML_) y la aplicación mostrará las tarjetas que comienza a crear.
 
-So move to our `app.component.ts` file and add the following code:
-
-```html
-<div class="card" *ngFor="let show of showList | async">
-  <img [src]="show.picture" width="50px" height="50px" />
-  <input [value]="show.name" />
-</div>
-```
-
-Here's what's going on:
-
-- `*ngFor="let show of showList | async"` is telling our angular app that the `<div>`is going to look at the `showList` property and repeat itself with every show it finds inside.
-- The `async` pipe is telling the app that `showList` has an asynchronous value.
-- `<img [src]="show.picture" width="50px" height="50px" />` is accessing at the `picture` property of our show and setting it as the source for the image.
-- `<input [value]="show.name" />` is creating an input pre-populated with our TV Show's name.
-
-Right now you should be able to see the TV Shows you add to your database, so go ahead and click the '**ADD**' button a few times and notice how the cards start popping out on your page.
-
-## Updating objects from our database
-
-Now that we can see our cards, the next step would be to be able to update some of the show's information, such as the show's name, and the picture (_remember, we're showing a random picture there_)
-
-For that let's modify the HTML we just wrote, we want to add event handlers on the image and the input so that when users click the image or write the show's name we can call functions that save that information to Firebase.
-
-Right now it looks like this:
+Así que muevete a nuestro archivo `app.component.ts` y agrega el siguiente código:
 
 ```html
 <div class="card" *ngFor="let show of showList | async">
@@ -48,7 +24,31 @@ Right now it looks like this:
 </div>
 ```
 
-Let's add a click handler for the image that triggers a function called `updatePicture()` and takes the show's ID as a parameter:
+Esto es lo que está pasando:
+
+- `*ngFor="let show of showList | async"` le está diciendo a nuestra aplicación angular que el `<div>` va a ver la propiedad `showList` y se repetirá con cada programa que encuentre dentro.
+- El pipe `async` le dice a la aplicación que `showList` tiene un valor asíncrono.
+- `<img [src]="show.picture" width="50px" height="50px" />` está accediendo a la propiedad `picture` de nuestro programa y configurándola como la fuente de la imagen.
+- `<input [value]="show.name" />` está creando una entrada rellenada previamente con el nombre de nuestro programa de televisión.
+
+Ahora mismo deberías poder ver los programas de televisión que agregas a tu base de datos, así que adelante, haz clic en el botón '**ADD**' unas cuantas veces y observa cómo comienzan a aparecer las tarjetas en tu página.
+
+## Actualizando objetos desde nuestra base de datos.
+
+Ahora que podemos ver nuestras tarjetas, el siguiente paso sería poder actualizar parte de la información del programa, como el nombre del programa y la imagen (_recuerden, estamos mostrando una imagen al azar_)
+
+Para eso modifiquemos el HTML que acabamos de escribir, queremos agregar controladores de eventos en la imagen y la entrada para que cuando los usuarios hagan clic en la imagen o escriban el nombre del programa, podamos llamar a las funciones que guardan esa información en Firebase.
+
+En este momento se ve así:
+
+```html
+<div class="card" *ngFor="let show of showList | async">
+  <img [src]="show.picture" width="50px" height="50px" />
+  <input [value]="show.name" />
+</div>
+```
+
+Agreguemos un controlador de clic para la imagen que activa una función llamada `updatePicture()` y tome el ID del programa como un parámetro:
 
 ```html
 <div class="card" *ngFor="let show of showList | async">
@@ -57,7 +57,7 @@ Let's add a click handler for the image that triggers a function called `updateP
 </div>
 ```
 
-Now let's create a change handler on the input, that calls the `updateName()` function when we change the show's name:
+Ahora vamos a crear un controlador de cambios en el input, que llama a la función `updateName()` cuando cambiamos el nombre del programa:
 
 ```html
 <div class="card" *ngFor="let show of showList | async">
@@ -66,9 +66,9 @@ Now let's create a change handler on the input, that calls the `updateName()` fu
 </div>
 ```
 
-Notice how we're passing the show's ID and whatever text is on the input.
+Observe cómo estamos pasando la identificación del programa y el texto que se encuentra en el input.
 
-Now we need to go to our `app.component.ts` page and create both of those functions, let's start with the update image one:
+Ahora debemos ir a nuestra página `app.component.ts` y crear ambas funciones, comencemos con la imagen de actualización uno:
 
 ```js
 updatePicture(id: string) {
@@ -79,13 +79,13 @@ updatePicture(id: string) {
 }
 ```
 
-That function is:
+Esa función es:
 
-- Calling the browser's native prompt alert asking you for the new image URL.
-- Getting whatever you write and assigning it to the variable `picture`.
-- If you do write something it goes inside the Firestore document and updates the property `picture`.
+- Llamar a la alerta de aviso nativa del navegador que le solicita la nueva URL de la imagen.
+- Obtener todo lo que escribes y asignar a la variable `imagen`.
+- Si escribes algo, esto irá dentro del documento de Firestore y actualizará la propiedad `picture`.
 
-Let's do the same for our update name function:
+Vamos a hacer lo mismo para nuestra la función de actualización de nombre:
 
 ```js
 updateName(id: string, name: string) {
@@ -93,16 +93,16 @@ updateName(id: string, name: string) {
 }
 ```
 
-We're creating a function that goes into our show and updates the name property.
+Estamos creando una función que entra en nuestro programa y actualiza la propiedad del nombre.
 
 ## `.set()` vs `.update()`
 
-You might have noticed that we've used 2 different ways to add data to Firestore, one was using the method `.set()` and the other one was using the `.update()` method.
+Es posible que haya notado que hemos usado 2 formas diferentes de agregar datos a Firestore, una usando el método `.set()` y la otra usando el método `.update()
 
-What's the difference between these two?
+¿Cuál es la diferencia entre estos dos?
 
-Well, `.set()` is destructive and `.update()` isn't.
+Bueno, `.set()` es destructivo y `.update()` no lo es.
 
-That meas that when you use `.set({ name: 'Jorge' })` it will delete every single property of that object and leave only the name property.
+Eso significa que cuando uses `.set({name: 'Jorge'})` borrará todas las propiedades de ese objeto y dejará solo la propiedad de nombre.
 
-And when you use `.update({ name: 'Jorge' })` it's going to look for the `name` property and change its value, all the other properties will remain the same.
+Y cuando uses `.update({name: 'Jorge'})` buscará la propiedad `name` y cambiará su valor, todas las demás propiedades seguirán siendo las mismas.

@@ -1,29 +1,30 @@
-# Welcome
+# Bienvenido!
 
-First of all, thank you. We know it's not easy to take time out of your weekend, so we're grateful you decided to trust we'll make it worth it :-)
+De antemano, muchas gracias. Sabemos que no es fácil sacar tiempo un fin de semana, así que te agradecemos que decidieras confiar en nosotros. Haremos que lo valga :-)
 
-## What we'll build
+## Lo que construiremos
 
-Throughout this workshop, we'll build a light version of IMDB (_Internet Movie Database_), a place where we'll keep a record of our favorite TV Shows or movies.
 
-It'll be something simple yet powerful enough to teach you the core concepts of building apps with Firebase and Angular.
+A lo largo de este taller, construiremos una versión ligera de IMDB (_Internet Movie Database_), un lugar donde mantendremos un registro de nuestros programas de TV o películas favoritos.
 
-You'll learn:
+Será algo simple pero lo suficientemente poderoso como para enseñarte los conceptos principales del desarrollo de aplicaciones con Firebase y Angular.
 
-- How to connect your app with Firebase.
-- How to fetch a list of items from Firebase and display them on the screen.
-- How to create a new item and add it to that list.
-- How to edit one of those items.
-- How to delete one of those items.
+Aquí aprenderás:
 
-In other words, you'll leave this workshop with the ability to interact with your Firebase database (_we'll use the new Firestore DB_) and handle all CRUD operations (_Create, Read, Update, and Delete_).
+- Cómo conectar tu aplicación con Firebase.
+- Cómo obtener una lista de elementos de Firebase y mostrarlos en la pantalla.
+- Cómo crear un nuevo elemento y agregarlo a esa lista.
+- Cómo editar uno de esos ítems.
+- Cómo eliminar uno de esos elementos.
 
-## Before we get started
+En otras palabras, dejará este taller con la capacidad de interactuar con tu base de datos Firebase (_utilizaremos el nuevo DB Firestore_) y manejaremos todas las operaciones CRUD (_Create, Read, Update, and Delete_).
 
-We want you to know a few things:
+## Antes de empezar
 
-- All the mentors came here for you, so please, feel free to call them and ask them as many questions as you want :-)
-- We want to make sure that everyone finishes the workshop, so if you finish one of the steps, do take a look around your table to see if you can help anyone else before moving to the next step.
-- We'll have a short intro at the beginning of each exercise, and a short recap at the end.
+Queremos que sepas algunas cosas:
 
-That's it, have a wonderful time and remember, we're here for you :-)
+- Todos los mentores vinieron aquí por ti, así que por favor, no dudes en llamarlos y hacerles todas las preguntas que desee :-)
+- Queremos asegurarnos de que todos terminen el taller, así que si terminas uno de los pasos, mira a tu alrededor para ver si puedes ayudar a alguien más antes de pasar al siguiente paso.
+- Tendremos una breve introducción al comienzo de cada ejercicio y un breve resumen al final.
+
+Eso es todo, pasalo de maravilla y recuerda, estamos aquí para ti :-)

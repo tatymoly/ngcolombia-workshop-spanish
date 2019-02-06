@@ -1,10 +1,10 @@
-# Removing objects from our database
+# Borrando objectos de nuestra base de datos
 
-In this lesson we'll finish building our application, the only missing functionality is the ability to remove content from the database.
+En esta lección, terminaremos de crear nuestra aplicación, la única funcionalidad que falta es la capacidad de eliminar contenido de la base de datos.
 
-Fortunately, we've already done all the leg work for this, all we need now is a way to cll a function that removes the TV Show.
+Afortunadamente, ya hemos hecho todo el trabajo posible para esto, todo lo que necesitamos ahora es una forma de hacer clic en una función que elimine el programa de televisión.
 
-First, open `app.component.html` and look for our TVShow card, remember it looks like this:
+Primero, abre `app.component.html` y busca nuestra tarjeta TVShow, recuerda que se ve así:
 
 ```html
 <div class="card" *ngFor="let show of showList | async">
@@ -13,7 +13,7 @@ First, open `app.component.html` and look for our TVShow card, remember it looks
 </div>
 ```
 
-Let's add a button inside that card that triggers a `remove()` function passing the show's ID:
+Agreguemos un botón dentro de esa tarjeta que active una función `remove()` que pasa el ID del programa:
 
 ```html
 <div class="card" *ngFor="let show of showList | async">
@@ -23,7 +23,7 @@ Let's add a button inside that card that triggers a `remove()` function passing 
 </div>
 ```
 
-Nothing to weird there, we're creating a button, and calling the `remove()`function, no let's move to our `app.component.ts` file and create that remove function:
+No hay nada extraño, estamos creando un botón, y llamando a la función `remove()`, ahora vamos a pasar a nuestro archivo `app.component.ts` y creamos esa función de eliminación:
 
 ```js
 remove(id: string) {
@@ -31,15 +31,15 @@ remove(id: string) {
 }
 ```
 
-The function is going into our specific TV Show and calling the `.delete()` method. And that's it! Whenever you click the X it's going to remove the show from the Firestore database.
+La función va a nuestro programa de TV específico y llama al método `.delete()`. ¡Y eso es! Cada vez que haga clic en la X, se eliminará el programa de la base de datos de Firestore.
 
-## Don't delete by accident
+## No borrar por accidente
 
-Ok, this isn't required, but it's a good practice, let's add a confirmation alert before calling the delete function.
+Ok, esto no es necesario, pero es una buena práctica, así que agreguemos una alerta de confirmación antes de llamar a la función de eliminación.
 
-The last thing we want to do is to click by accident and permanently lose a database record.
+Lo último que queremos hacer es hacer clic por accidente y perder permanentemente un registro de la base de datos.
 
-We'll use the browser native confirmation prompt, so make the `remove()` function look like this:
+Usaremos el indicador de confirmación nativo del navegador, así que haz que la función `remove()` tenga este aspecto:
 
 ```js
 remove(id: string) {
@@ -49,8 +49,8 @@ remove(id: string) {
 }
 ```
 
-That way the app will show an alert asking you if you're sure about deleting the record.
+De esa manera, la aplicación mostrará una alerta preguntadote si estás segur@ de querer eliminar el registro.
 
-## Next Steps
+## Siguientes pasos
 
-Congratulations, you're done with the workshop, by now you should have a fully functional app, if you're up for a new challenge, let's move to a bonus section where you'll learn a bit more about Angular best practices.
+Enhorabuena, ya has terminado con el taller. Ahora deberías tener una aplicación completamente funcional. Si está preparado para un nuevo desafío, pasemos a una sección de bono donde aprenderás un poco más sobre las mejores prácticas de Angular.

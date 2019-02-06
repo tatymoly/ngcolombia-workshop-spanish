@@ -1,9 +1,9 @@
 # Table of contents
 
-- [Welcome](README.md)
-- [The tools we'll use](01-tools.md)
-- [Fire-what!?](02-firebase.md)
-- [How to store info in our database](03-create.md)
-- [Reading and Updating data](04-read.md)
-- [Removing objects from our database](05-delete.md)
+- [Bienvenida](README.md)
+- [Herramientas que utilizaremos](01-tools.md)
+- [Fire-qué!?](02-firebase.md)
+- [Cómo almacenar info en tu base de datos](03-create.md)
+- [Leyendo y actualizando data](04-read.md)
+- [Eliminando objetos de nuestra base de datos](05-delete.md)
 - [Brownie Points](06-brownie-points.md)

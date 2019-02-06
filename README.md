@@ -1,4 +1,4 @@
-# Bienvenido!
+# Bienvenid@!
 
 De antemano, muchas gracias. Sabemos que no es fácil sacar tiempo un fin de semana, así que te agradecemos que decidieras confiar en nosotros. Haremos que lo valga :-)
 
